@@ -3,7 +3,9 @@ RiqueShop=function(){
 		var tpl = new Array();
 			tpl.push('<ul>');
 				tpl.push('{{#results}}');
-					tpl.push('<li>{{title}}</li>');
+					tpl.push('<li><div>');
+					tpl.push('<img src="{{thumbnail}}"/><a href="{{permalink}}" target="_blank">{{title}}</a>');
+					tpl.push('</div></li>');
 				tpl.push('{{/results}}');	
 			tpl.push('</ul>');
 		return tpl.join('').trim();
@@ -16,9 +18,7 @@ RiqueShop=function(){
 					  text.attr('disabled', 'disabled');
 				
 			$.getJSON(url, function(data){
-				console.log( jQuery.parseJSON(data.response) );
 				var render = Mustache.to_html(tpl, jQuery.parseJSON(data.response) );
-				console.log( render );
 				
 				/**
 				 * @todo código da tpl deve ser adicionado aqui!
