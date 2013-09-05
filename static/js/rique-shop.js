@@ -17,7 +17,7 @@ RiqueShop=function(){
 				
 			$.getJSON(url, function(data){
 				console.log( jQuery.parseJSON(data.response) );
-				var render = Mustache.to_html(tpl, data.response );
+				var render = Mustache.to_html(tpl, jQuery.parseJSON(data.response) );
 				console.log( render );
 				
 				/**
