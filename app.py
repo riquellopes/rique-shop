@@ -20,4 +20,4 @@ def search(q):
 		Start search on mercadolivre
 	"""
 	response=livre.get(path='/sites/MLA/search?q={0}'.format(q))
-	return response.content
+	return jsonify(response=response.content)
