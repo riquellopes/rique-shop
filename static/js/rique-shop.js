@@ -16,7 +16,7 @@ RiqueShop=function(){
 					  text.attr('disabled', 'disabled');
 				
 			$.getJSON(url, function(data){
-				console.log( tpl );
+				console.log( data.response.results );
 				var render = Mustache.to_html(tpl, data.response );
 				console.log( render );
 				
